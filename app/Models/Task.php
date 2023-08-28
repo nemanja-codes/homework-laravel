@@ -9,12 +9,14 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    /*protected $fillable = [
         'name',
         'priority',
         'description'
 
-    ];
+    ];*/
+
+    protected $guarded = [];
 
     public function category()
     {
