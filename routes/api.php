@@ -23,6 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function (Request $request) {
         return auth()->user();
@@ -41,5 +44,3 @@ Route::resource('projects', ProjectController::class)->only(['index','show']);
 Route::resource('tasks', TaskController::class)->only(['index','show']);
 Route::resource('categories', CategoryController::class)->only(['index','show']);
 Route::resource('users', UserController::class)->only(['index','show']);
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);

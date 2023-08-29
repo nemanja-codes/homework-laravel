@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $$projects = Project::all();
+        $projects = Project::all();
         return new ProjectCollection($projects);
     }
 
@@ -39,7 +39,7 @@ class ProjectController extends Controller
             'description' => 'required|string|max:2000',
             'priority' => 'required|integer|between:1,10',
             'client' => 'required|string|max:255',
-            'user_id' => 'required'
+            'user_id' => 'required|integer'
         ]);
 
         if ($validator->fails())

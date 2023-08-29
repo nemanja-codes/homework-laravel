@@ -9,12 +9,14 @@ class Project extends Model
 {
     use HasFactory;
 
-    /*protected $fillable = [
+    protected $fillable = [
         'name',
         'priority',
-        'description'
+        'description',
+        'client',
+        'user_id'
 
-    ];*/
+    ];
 
     protected $guarded = [];
 
