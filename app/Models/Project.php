@@ -15,7 +15,6 @@ class Project extends Model
         'description',
         'client',
         'user_id'
-
     ];
 
     protected $guarded = [];
